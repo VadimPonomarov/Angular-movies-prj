@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="d-flex flex-wrap">
+    <div class="sidebar-title">{{title | uppercase}}</div>
+    <div *ngFor="let genre of genres">
+      <button [id]="genre.id"
+              class="btn btn-outlined-secondary border rounded-pill m-1"
+              (click)="handleClick(genre.id)"
+      >
+        {{genre.name}}
+      </button>
+    </div>
+  </div>
+</div>

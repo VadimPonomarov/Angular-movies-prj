@@ -1,0 +1,30 @@
+<ng-container *ngIf="movieDetails">
+  <h1>{{movieDetails.title}} ({{movieDetails.release_date | date: 'YYYY'}})</h1>
+  <span class="border">PG-13</span>
+  <span>{{movieDetails.release_date | date: 'dd/mm/yy'}}</span>
+  <span>(UA)</span>
+  <ng-container *ngFor="let genre of movieDetails.genres">
+    <span>{{genre.name}} </span>
+  </ng-container>
+  <span>{{movieDetails.runtime | date: 'hhч mmмин'}}</span>
+
+  <div class="d-flex align-items-end">
+    <div class="rate-circle-inner">
+      <h3>{{movieDetails.vote_average | number: ''}}</h3>
+    </div>
+    <h6 class="m-3 col-1">Пользовательский счет</h6>
+  </div>
+  <i><h5 class="m-2 text-secondary">{{movieDetails.tagline}}</h5></i>
+  <div>
+    <h5>Обзор</h5>
+  </div>
+  <p>
+    {{movieDetails.overview}}
+  </p>
+
+  <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="false"></ngb-rating>
+  <button (click)="handleClick()" class="btn btn-outline text-primary">Оценить</button>
+</ng-container>
+
+
+

@@ -1,0 +1,19 @@
+.card {
+  height: 450px !important;
+
+  img {
+    height: 70% !important;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .card {
+    height: auto !important;
+  }
+}

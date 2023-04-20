@@ -1,0 +1,15 @@
+<div class="card">
+  <form [formGroup]="form">
+    <div class="sidebar-title">{{title | uppercase}}</div>
+    <select
+      class="custom-select w-100"
+      formControlName="language"
+      (change)="handleChange($event)"
+    >
+      <option value="ru-Ru">Русский</option>
+      <option value="ua-Ua" disabled>Украинский</option>
+      <option value="en-Us" disabled>Английский</option>
+    </select>
+  </form>
+</div>
+

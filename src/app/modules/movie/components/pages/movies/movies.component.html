@@ -1,0 +1,15 @@
+<app-pagination
+  [curCategory]="curCategory"
+  (changeCurPage)="handleChangePage($event)"
+></app-pagination>
+
+<div class="d-flex flex-wrap">
+  <div
+    *ngFor="let movie of currentMovieList"
+    class="col-12 col-md-6 col-lg-4 col-xl-3"
+  >
+    <app-main-page-card [movie]="movie">
+    </app-main-page-card>
+  </div>
+</div>
+

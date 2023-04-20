@@ -1,0 +1,15 @@
+.sidebar-title {
+  margin: 5px 0 10px 0 !important;
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.card {
+  padding: 15px !important;
+  margin: 15px 5px !important;
+  border: 2px solid lightgrey !important;
+  border-radius: 10px !important;
+  box-shadow: 2px 2px 2px darkgrey !important;
+}
+@import '~bootstrap/scss/bootstrap';

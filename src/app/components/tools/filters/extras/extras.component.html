@@ -1,0 +1,49 @@
+<div class="card .custom-slider .ngx-slider .ngx-slider-pointer">
+  <div>{{title3}}</div>
+  <div class="custom-slider" disabled="active">
+    <ngx-slider
+      [(value)]="minRunTime"
+      [(highValue)]="maxRunTime"
+      [options]="options3"
+      (valueChange)="storeParams()"
+    >
+    </ngx-slider>
+  </div>
+  <div>{{title1}}</div>
+  <div class="custom-slider">
+    <ngx-slider
+      [(value)]="voteAverage"
+      [options]="options1"
+      (valueChange)="storeParams()"
+    >
+    </ngx-slider>
+  </div>
+  <div>{{title2}}</div>
+  <div class="custom-slider">
+    <ngx-slider
+      [(value)]="minValueVote"
+      [(highValue)]="maxValueVote"
+      [options]="options2"
+      (valueChange)="storeParams()"
+    >
+    </ngx-slider>
+  </div>
+</div>
+<div class="d-flex flex-wrap justify-content-center">
+  <button
+    type="button"
+    class="btn col-12 mb-1 btn-outline text-primary" (click)="handleRefreshParams()"
+  >
+    <h6>Обновить страницу</h6>
+  </button>
+  <button
+    id='btn-extras'
+    type="button"
+    class="btn col-12 btn-outline"
+    (click)="handleClick()"
+  >
+    Отменить фильтр
+  </button>
+</div>
+
+

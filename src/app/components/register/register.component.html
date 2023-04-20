@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center">
+  <button (click)="handleClick()" class="btn btn-outline text-primary">
+    <i><h5>Назад</h5></i>
+  </button>
+</div>
+<div class="main-div">
+  <form [formGroup]="form" class="border p-5" (submit)="register($event)">
+    <h6>Форма регистрации пользователя</h6>
+    <div>
+      <label class="col-sm-2 col-form-label">Имя пользователя</label>
+      <input type="text" class="form-control" formControlName="username">
+      <div *ngIf="form.get('username')?.dirty
+    && form.controls?.['username']?.errors?.['minlength']
+    || form.controls?.['username']?.errors?.['minlength']" class="text-danger text-err">
+        <div>Имя пользователя не менее 2 и не более 20 символов</div>
+      </div>
+    </div>
+    <div>
+      <label class=" col-sm-2 col-form-label">Пароль</label>
+      <input type="password" class="form-control" formControlName="password">
+      <div *ngIf="form.get('password')?.dirty
+    && (form.controls?.['password']?.errors?.['minlength']
+    || form.controls?.['password']?.errors?.['maxlength'])" class="text-danger text-err"
+      >
+        <div>Пароль не менее 2 и не более 20 символов</div>
+      </div>
+    </div>
+    <div>
+      <label class="col-sm-2 col-form-label">Пароль подтверждение</label>
+      <input type="password" class="form-control" formControlName="confirmPassword">
+    </div>
+    <div *ngIf="form.get('confirmPassword')?.dirty
+    && (form.controls?.['confirmPassword']?.errors?.['minlength']
+    || form.controls?.['confirmPassword']?.errors?.['maxlength'])" class="text-danger text-err"
+    >
+      <div>Пароль не менее 2 и не более 20 символов</div>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary mt-3">Отправить</button>
+    </div>
+  </form>
+</div>
